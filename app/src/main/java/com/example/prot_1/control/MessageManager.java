@@ -11,7 +11,13 @@ import com.example.prot_1.model.db.message.DBControllerMessage;
 
 import java.sql.Timestamp;
 
-
+/**
+ * takes requests from MessageFragment (Komponent) - get, save, delete Messages
+ * most important is the vieMessageList obj which holds the Messages for the
+ * recyclerView and the ViewMessageActivity.
+ * MessageManager is the only object which can send requests to the db
+ * with the dbController obj.
+ */
 
 public class MessageManager {
 
@@ -29,8 +35,15 @@ public class MessageManager {
         sendMessageList = new MessageDataList();
         receivedMessageList = new MessageDataList();
         dbController = dbControllerI;
+        getDataFromDB();
     }
 
+    /**
+     * creates the MessageManager instance if needed
+     * and returns the instance
+     *
+     * @return only instance of the MessageManager
+     */
     public static MessageManager getInstance(){
         if(instance == null){
             instance = new MessageManager(new DBControllerMessage());
@@ -45,9 +58,13 @@ public class MessageManager {
         return instance;
     }
 
+    /**
+     * gives the possibility to change Data bevore view, or restrict data
+     *
+     * @return MessageDataList obj for recyclerView and ViewActivity
+     */
     public MessageDataList getData(){
         if(viewMessageList.getMessageListCount() == 0){
-            getDataFromDB();
             greetDummy();
             //setMoreDummyData();
             //spamSomeDummys();
@@ -55,10 +72,18 @@ public class MessageManager {
         return viewMessageList;
     }
 
+    /**
+     * refresh the data in the lists
+     * work in progress
+     */
     public void updateData(){
         getDataFromDB();
     }
 
+    /**
+     * gets all Message Elements of the db
+     * and adds them to viewMessageList
+     */
     private void getDataFromDB(){
         try {
             viewMessageList.addElementList(dbController.getData());

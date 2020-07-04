@@ -47,8 +47,8 @@ public class OSMFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.osmmap_layout, container, false);
         tvText = view.findViewById(R.id.tvOSMText);
-        btnNavFragMessage = view.findViewById(R.id.btnNavMessage);
-        btnNavFragNetwork = view.findViewById(R.id.btnNavNetwork);
+        btnNavFragMessage = view.findViewById(R.id.btnNavMapToMsg);
+        btnNavFragNetwork = view.findViewById(R.id.btnNavMapToNet);
 
         btnNavFragMessage.setOnClickListener(new View.OnClickListener(){
             @Override

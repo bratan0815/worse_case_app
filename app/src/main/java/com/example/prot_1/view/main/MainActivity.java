@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.prot_1.R;
+import com.example.prot_1.control.MessageManager;
 import com.example.prot_1.view.messages.MessagesFragment;
 import com.example.prot_1.view.network.NetworkFragment;
 import com.example.prot_1.view.osm.OSMFragment;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ViewPager mViewPager;
     private SQLiteDatabase myDatabase;
+    private MessageManager msgManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         myDatabase.close();
         myDatabase = this.openOrCreateDatabase("Tracking.db", MODE_PRIVATE, null);
         myDatabase.close();
+        msgManager = MessageManager.getInstance();
 
     }
     private void setupViewPager(ViewPager viewPager){

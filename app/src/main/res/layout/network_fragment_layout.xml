@@ -32,21 +32,21 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnNavMessage"
+                android:id="@+id/btnNavNetToMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Messages"
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/btnNavNetwork"
+                android:id="@+id/btnNavNetToNet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Network"
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/btnNavMap"
+                android:id="@+id/btnNavNetToMap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Map"

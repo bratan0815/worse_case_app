@@ -30,10 +30,6 @@ public class DBMessage implements DBMessageInterface {
         myDB = myMocDB;
     }
 
-
-
-
-
     @Override
     public MessageDataList selectMessageData(String cmd){
         MessageDataList msgList = new MessageDataList();
@@ -71,7 +67,6 @@ public class DBMessage implements DBMessageInterface {
     public void dropData(String cmd){
         Log.i(TAG, "dropData: called");
         myDB.execSQL(cmd);
-
     }
 
     public void deleteData(String cmd){

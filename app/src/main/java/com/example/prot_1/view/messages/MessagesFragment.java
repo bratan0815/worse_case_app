@@ -38,9 +38,11 @@ public class MessagesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.messages_fragment_layout, container, false);
-        btnNavFragMessage = view.findViewById(R.id.btnNavMessage);
-        btnNavFragNetwork = view.findViewById(R.id.btnNavNetwork);
-        btnNavFragMap = view.findViewById(R.id.btnNavMap);
+        btnNavFragMessage = view.findViewById(R.id.btnNavMsgToMsg);
+
+        btnNavFragNetwork = view.findViewById(R.id.btnNavMsgToNet);
+
+        btnNavFragMap = view.findViewById(R.id.btnNavMsgToMap);
         btnNavActWriteMsg = view.findViewById(R.id.btnNavActivityWrite);
         recyclerViewList = view.findViewById(R.id.rvList);
         msgController = MessageManager.getInstance();

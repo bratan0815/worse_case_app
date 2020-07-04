@@ -31,6 +31,36 @@ public class MessageDataList {
         return messageList.size();
     }
 
+    /**
+     *
+     * @param title
+     * @return MessageData, null if not found
+     */
+    public MessageData getItemWithTitle(String title){
+        if(messageList != null) {
+            for (MessageData msg : messageList) {
+                if (msg.getHeader().getTitle() == title) {
+                    return msg;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param title
+     */
+    public void deleteItemWithTitle(String title){
+        if(messageList != null) {
+            for (MessageData msg : messageList) {
+                if (msg.getHeader().getTitle() == title) {
+                    messageList.remove(msg);
+                }
+            }
+        }
+    }
+
     public void addElement(MessageData newMessage){
         if(newMessage != null && !checkIfAlreadyInList(newMessage)) {
             messageList.add(newMessage);
@@ -91,6 +121,13 @@ public class MessageDataList {
         }
     }
 
+    /**
+     * true if msg1 title & author == msg 2 title & author
+     * else false
+     * @param msg1
+     * @param msg2
+     * @return boolean
+     */
     public boolean checkIfEqual(MessageData msg1, MessageData msg2){
         if(msg1.getHeader().getTitle().equals(msg2.getHeader().getTitle()) && msg1.getHeader().getAuthor().equals(msg2.getHeader().getAuthor())){
             return true;

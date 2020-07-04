@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.OSMActivity">
+    tools:context=".view.osm.OSMFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clText"
@@ -30,7 +30,7 @@
 
 
                 <Button
-                    android:id="@+id/btnNavMessage"
+                    android:id="@+id/btnNavMapToMsg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
@@ -40,7 +40,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btnNavNetwork"
+                    android:id="@+id/btnNavMapToNet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"

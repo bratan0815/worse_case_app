@@ -26,9 +26,9 @@ public class NetworkFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.network_fragment_layout, container, false);
-        btnNavFragMessage = view.findViewById(R.id.btnNavMessage);
-        btnNavFragNetwork = view.findViewById(R.id.btnNavNetwork);
-        btnNavFragMap = view.findViewById(R.id.btnNavMap);
+        btnNavFragMessage = view.findViewById(R.id.btnNavNetToMsg);
+        btnNavFragNetwork = view.findViewById(R.id.btnNavNetToNet);
+        btnNavFragMap = view.findViewById(R.id.btnNavNetToMap);
 
 
         btnNavFragMessage.setOnClickListener(new View.OnClickListener(){

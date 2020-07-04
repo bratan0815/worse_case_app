@@ -34,7 +34,7 @@ public class MessageDataListTest {
     @Test
     public void removeAlikeElement() {
         MessageData dataObj = msgListDataDummy.getMessageList().get(0);
-        msgList.removeElement(dataObj);
+        msgList.removeAlikeElement(dataObj);
         assertFalse(msgList.getListOfElements().contains(dataObj));
     }
 
